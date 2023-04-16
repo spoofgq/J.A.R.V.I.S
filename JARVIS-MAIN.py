@@ -216,7 +216,7 @@ def main():
     print("##############################################################################")
     print("                 Powered by Jarvis Integrations Network.")
     print("##############################################################################")
-    eyeBlue = subprocess.Popen(['python jarvisorb.py -c blue'])
+    #eyeBlue = subprocess.Popen(['python jarvisorb.py -c blue'])
     response_randomizer(type='greeting_v1')
     history = []
     ########connect creds for google wavenet
