@@ -71,9 +71,7 @@ light_turnoff = (hass_url + '/api/services/light/turn_off')
 script_toggle = (hass_url + '/api/services/homeassistant/toggle')
 
 
-######################################################################## OPENAI SETUP ################################################################
-
-# Replace with your OpenAI API key
+######################################################################## OPENAI ################################################################
 
 def generate_response(prompt):
     completions = openai.ChatCompletion.create(
