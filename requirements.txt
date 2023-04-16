@@ -1,0 +1,8 @@
+openai
+gtts
+pygame
+SpeechRecognition
+PyAudio
+playsound
+google-cloud-texttospeech
+tk
