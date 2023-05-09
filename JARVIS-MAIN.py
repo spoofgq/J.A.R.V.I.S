@@ -264,17 +264,6 @@ def response_randomizer(type):
         if time_of_day == "Night":
             random_response_say = tts_dir + 'welcoming/goodeveningsir2.mp3'
 
-    ## INTRODUCTION
-    if type in ['introduction']:
-        random_response = random.randint(0,2)
-        if random_response == 0:
-            random_response_say = tts_dir + 'greeting/mynameis1.mp3'
-        if random_response == 1:
-            random_response_say = tts_dir + 'greeting/mynameis2.mp3'
-        if random_response == 2:
-            random_response_say = tts_dir + 'greeting/mynameis3.mp3'
-    
-    
     ## say response
     playsound.playsound(f"{random_response_say}")
         
