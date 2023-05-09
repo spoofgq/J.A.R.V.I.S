@@ -28,11 +28,11 @@ use_ui = 'true'     # leave empty if you don't want the jarvis ui
 openai_key = "your_key_here"
 
 # Add your Home Assistant Settings
-hass_name = ''  # the name of your HASS instance (anything you want)('<br>')
-hass_dns = ''   # (ex. https://yourhassdomain.duckdns.org:443)
-hass_local = ''    # the local ip address/port (ex. http://192.168.1.1:8123)
-host_server = ''   # only set if you're running hass on a VM - this is your VM's host IP
-hass_key = '' # your hass auth key
+hass_name = ''  # the name of your HASS instance (anything you want) <br>
+hass_dns = ''   # (ex. https://yourhassdomain.duckdns.org:443) <br>
+hass_local = ''    # the local ip address/port (ex. http://192.168.1.1:8123) <br>
+host_server = ''   # only set if you're running hass on a VM - this is your VM's host IP <br>
+hass_key = '' # your hass auth key <br>
 
 # HASS Devices (change to your actual device ids on your hass instance)
 main_lights = ''
