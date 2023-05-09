@@ -22,7 +22,7 @@ Add your .json file to /credentials
 
 # Add your OpenAI API key to the script:
 
-openai.api_key = "your_key_here"
+openai_key = "your_key_here"
 
 # Add your Home Assistant url + key
 hass_url = "https://your-homeassistant-url.com:443"
