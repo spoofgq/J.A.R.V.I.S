@@ -20,13 +20,33 @@ pip install -r requirements.txt
 
 Add your .json file to /credentials
 
+# Use Jarvis UI / Optional
+use_ui = 'true'     # leave empty if you don't want the jarvis ui
+
 # Add your OpenAI API key to the script:
 
 openai_key = "your_key_here"
 
-# Add your Home Assistant url + key
-hass_url = "https://your-homeassistant-url.com:443"
-hass_key = "your_hass_key_here"
+# Add your Home Assistant Settings
+hass_name = ''  # the name of your HASS instance (anything you want)
+hass_dns = ''   # (ex. https://yourhassdomain.duckdns.org:443)
+hass_local = ''    # the local ip address/port (ex. http://192.168.1.1:8123)
+host_server = ''   # only set if you're running hass on a VM - this is your VM's host IP
+hass_key = '' # your hass auth key
+
+# HASS Devices (change to your actual device ids on your hass instance)
+main_lights = ''
+alt_lights = '' 
+fan = ''
+fridge = ''
+security_mode = ''
+
+# HASS Scripts (custom scripts you may want Jarvis to control)
+script_1 = ''
+script_2 = ''
+script_3 = ''
+script_4 = ''
+script_5 = ''
 
 # Run JARVIS-MAIN
 python JARVIS-MAIN.py
