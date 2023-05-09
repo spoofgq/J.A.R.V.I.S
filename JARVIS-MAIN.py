@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# JARVIS-MAIN v2
 import openai
 import gtts
 import speech_recognition as sr
@@ -8,46 +9,42 @@ import pygame
 import uuid
 import argparse
 import io
-import subprocess
 import time
-from datetime import datetime
 import re
 import requests
 import os
-from tempfile import NamedTemporaryFile
 import google.cloud.texttospeech as texttospeech
 import random
-from jarvisorb import orb
-from jarvisorb import orbBlue
-from jarvisorb import orbGreens
-from jarvisorb import orbYellow
-from jarvisorb import orbPurple
-###########################################
-## variables
-###########################################
-## EMPTY
-s = ''
+import pygetwindow as gw
+from subprocess import Popen
+from pathlib import Path
+from datetime import datetime
+from tempfile import NamedTemporaryFile
+
 ###########
 ## SETTINGS - CHANGE THESE
 ###########
-
-########### OPENAI API KEY ###########
-openai.api_key = ""
-
+use_ui = 'true'     # leave empty if you don't want the jarvis ui
+openai_key = ''     # enter your openai api key here
 ########### HOME ASSISTANT SETTINGS ###########
-hass_url = ""
-hass_key = ""
-### Devices
-main_lights = ""
-alt_lights = ""
-fan = ""
-fridge = ""
-## Scripts
-script_1 = ""
-script_2 = ""
-script_3 = ""
-script_4 = ""
-script_5 = ""
+hass_name = ''  # the name of your HASS instance (anything you want)
+hass_dns = ''   # (ex. https://yourhassdomain.duckdns.org:443)
+hass_local = '' # the local ip address/port (ex. http://192.168.1.1:8123)
+host_server = ''   # only set if you're running hass on a VM - this is your VM's host IP
+hass_key = '' # your hass auth key
+
+### HASS Devices (change to your actual device ids on your hass instance)
+main_lights = 'light.mainlights'
+alt_lights = 'light.altlights' 
+fan = 'switch.fan'
+fridge = 'switch.fridge'
+security_mode = 'switch.securitymode'
+## HASS Scripts (custom scripts you may want Jarvis to control)
+script_1 = ''
+script_2 = ''
+script_3 = ''
+script_4 = ''
+script_5 = ''
 
 ########### MICROPHONE SETTINGS ###########
 microphone_device = 1               #    1 = windows default
