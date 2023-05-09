@@ -35,18 +35,18 @@ host_server = ''   # only set if you're running hass on a VM - this is your VM's
 hass_key = '' # your hass auth key <br>
 
 # HASS Devices (change to your actual device ids on your hass instance)
-main_lights = ''
-alt_lights = '' 
-fan = ''
-fridge = ''
-security_mode = ''
+main_lights = '' <br>
+alt_lights = '' <br>
+fan = '' <br>
+fridge = '' <br>
+security_mode = '' <br>
 
 # HASS Scripts (custom scripts you may want Jarvis to control)
-script_1 = ''
-script_2 = ''
-script_3 = ''
-script_4 = ''
-script_5 = ''
+script_1 = '' <br>
+script_2 = '' <br>
+script_3 = '' <br>
+script_4 = '' <br>
+script_5 = '' <br>
 
 # Run JARVIS-MAIN
 python JARVIS-MAIN.py
