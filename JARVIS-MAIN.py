@@ -47,7 +47,7 @@ script_4 = ''
 script_5 = ''
 
 ########### DEVICE SETTINGS ###########
-microphone_device = 7               #    1 = default
+microphone_device = 1               #    1 = default
 
 ###########
 ## DO NOT TOUCH
