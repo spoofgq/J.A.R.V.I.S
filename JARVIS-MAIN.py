@@ -165,7 +165,9 @@ def play_mp3(audio):
   name = "temp.mp3"
   with open(name, 'wb') as out:
     out.write(audio)
+  ui('talking')
   p = playsound.playsound(name)
+  ui('main')
   os.remove("./temp.mp3")
   print("Finished Response.")
 
@@ -302,6 +304,7 @@ if use_ui == "true":
     Popen(["python", "ui.py"], cwd=ui_dir)
     print("Loading UI . . .")
     time.sleep(8)
+    jarvisTalking=gw.getWindowsWithTitle('talking_orb')[0]
     jarvisRed=gw.getWindowsWithTitle('red_orb')[0]
     jarvisGreen=gw.getWindowsWithTitle('green_orb')[0]
     jarvisYellow=gw.getWindowsWithTitle('yellow_orb')[0]
@@ -362,30 +365,27 @@ def main():
 
         ## CURRENT TIME
         if re.search(r"(?:what |what's |tell me )(?:the|time)(?: is it| time)", user_input):
-             ui('green')
+             
              import time
              t = time.strftime("%I:%M %p")
              #V2 TTS
              audio = synthesize_text(t, client)
              play_mp3(audio)
              del history[-1]
-             ui('main')
              continue
         
         ## TODAYS DATE  
         if re.search(r"what(?:'s)?(?: )(?:today's date|day is it(?: today)?)", user_input): 
-             ui('green')   
              from datetime import date
              day3 = datetime.today().strftime('%A, %B %d, %Y')
              audio = synthesize_text(day3, client)
              play_mp3(audio)
              del history[-1]
-             ui('main')
              continue
 
         ## Server Status
         if re.search(r"((?:what(?:'s| is)?)(?: the|your )(?: server status| service status)|is (?:the|your) server(?: )(?:online|offline)(?: right now)?)", user_input):    
-             ui('green')
+             
              if check_ping_physical() == "Online":
                 if check_ping_hass(hass_local) == "Online":
                     response = "Both the " + hass_name + " and Physical Host Server are online and functional, sir."
@@ -398,8 +398,7 @@ def main():
              audio = synthesize_text(response, client)
              play_mp3(audio)
              del history[-1]
-             ui('main')
-             continue        
+             continue     
         
 ##################### SMART DEVICE CONTROL #########################
 
@@ -502,7 +501,6 @@ def main():
         voice_response = response
         audio = synthesize_text(voice_response, client)
         play_mp3(audio)
-        ui('main')
 
 
 if __name__ == "__main__":
