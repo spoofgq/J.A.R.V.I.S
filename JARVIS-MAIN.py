@@ -189,36 +189,49 @@ def ui(type):
             jarvisPurple.minimize()
             jarvisRed.minimize()
             jarvisYellow.minimize()
+            jarvisTalking.minimize()
         elif type == "green":
             jarvisGreen.restore()
             jarvisBlue.minimize()
             jarvisPurple.minimize()
             jarvisRed.minimize()
             jarvisYellow.minimize()
+            jarvisTalking.minimize()
         elif type == "red":
             jarvisRed.restore()
             jarvisBlue.minimize()
             jarvisPurple.minimize()
             jarvisGreen.minimize()
             jarvisYellow.minimize() 
+            jarvisTalking.minimize()
         elif type == "yellow":
             jarvisYellow.restore()
             jarvisBlue.minimize()
             jarvisPurple.minimize()
             jarvisRed.minimize()
             jarvisGreen.minimize()
+            jarvisTalking.minimize()
         elif type == "purple":
             jarvisPurple.restore()
             jarvisBlue.minimize()
             jarvisGreen.minimize()
             jarvisRed.minimize()
-            jarvisYellow.minimize()            
+            jarvisYellow.minimize() 
+            jarvisTalking.minimize()
+        elif type == "talking":
+            jarvisTalking.restore()
+            jarvisPurple.minimize()
+            jarvisBlue.minimize()
+            jarvisGreen.minimize()
+            jarvisRed.minimize()
+            jarvisYellow.minimize()                  
         else:
             jarvisBlue.minimize()
             jarvisGreen.minimize()
             jarvisPurple.minimize()
             jarvisRed.minimize()
             jarvisYellow.minimize()
+            jarvisTalking.minimize()
 
 ############### PRESET RANDOMIZED RESPONSES ###################
 
